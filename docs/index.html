@@ -178,8 +178,8 @@
         //vRecJSON["geolocation"] = vLinkParam.getValue("geolocation");
         var vGeoLoc = vLinkParam.getValue("geolocation");
         var vGeoArr = vGeoLoc.split(",");
-        vRecJSON["lat"] = vGeoArr[0];
-        vRecJSON["lng"] = vGeoArr[1];
+        vRecJSON["lat"] = vGeoArr[1];
+        vRecJSON["lng"] = vGeoArr[0];
         vEditor4JSON.aData[vEditor4JSON.current] = vRecJSON;
         vEditor4JSON.aEditor.setValue(vRecJSON);
       };
