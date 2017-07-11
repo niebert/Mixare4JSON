@@ -1,83 +1,95 @@
 vDataJSON["mapobject"] = {
-  "type": "object",
-  "title": "SDG Record",
-  "headerTemplate": "SDG: {{ self.title4map}}",
-  "properties": {
-    "title4map": {
-      "type": "string",
-      "title": "Title for Map Icon",
-      "default": "My Location SDG Title"
-    },
-    "geolocation": {
-      "title": "Geolocation:",
-      "type": "string",
-    },
-    "SDG": {
-      "title": "List SDG",
-      "type":"array",
-      "format":"tabs",
-      "uniqueItems": false,
-      "items":{
-        "title":"Sustainable Development Goal",
-        "headerTemplate": "SDG {{ self }}",
-        "type": "string",
-        "enum": [
-          "1",
-          "2",
-          "3",
-          "4",
-          "5",
-          "6",
-          "7",
-          "8",
-          "9",
-          "10",
-          "11",
-          "12",
-          "13",
-          "14",
-          "15",
-          "16",
-          "17"
-        ],
-        "options": {
-          "enum_titles": [
-            "Goal 1: No Poverty",
-            "Goal 2: Zero Hunger",
-            "Goal 3: Good Health and Well-being",
-            "Goal 4: Quality Education",
-            "Goal 5: Gender Equality",
-            "Goal 6: Clean Water and Sanitation",
-            "Goal 7: Affordable and Clean Energy",
-            "Goal 8: Decent Work and Economic Growth",
-            "Goal 9: Industry, Innovation and Infrastructure",
-            "Goal 10: Reduced Inequalities",
-            "Goal 11: Sustainable Cities and Communities",
-            "Goal 12: Responsible Consumption and Production",
-            "Goal 13: Climate Action",
-            "Goal 14: Life Below Water",
-            "Goal 15: Life on Land",
-            "Goal 16: Peace, Justice and Strong Institutions",
-            "Goal 17: Partnerships for the Goals"
-          ]
+	"type": "object",
+	"title": "Mixare JSON",
+	"headerTemplate": "Icon: {{ self.title}}",
+	"type": "object",
+    "id": "https://niebert.github.io/json-editor",
+    "defaultProperties": [
+        "id",
+        "lat",
+        "lng",
+        "elevation",
+        "title",
+        "distance",
+        "has_detail_page",
+        "webpage"
+    ],
+	"properties": {
+		"id": {
+            "type": "string",
+            "id": "/properties/id",
+            "title": "ID",
+            "default": "2821",
+            "format": "text",
+            "description": "Unique ID for all icons"
+        },
+        "title": {
+            "type": "string",
+            "id": "/properties/title",
+            "title": "Title",
+            "default": "Title of Mixare Icon",
+            "format": "text",
+            "description": "Title displayed with Mixare Augemented Reality Icon."
+        },
+        "lat": {
+            "type": "string",
+            "id": "/properties/lat",
+            "title": "Latitude",
+            "default": "46.49396",
+            "format": "text",
+            "description": "An explanation for 'root.lat' about the purpose of string instance with editor path 'root.lat'."
+        },
+        "lng": {
+            "type": "string",
+            "id": "/properties/lng",
+            "title": "Longitude",
+            "default": "11.2088",
+            "format": "text",
+            "description": "An explanation for 'root.lng' about the purpose of string instance with editor path 'root.lng'."
+        },
+        "elevation": {
+            "type": "string",
+            "id": "/properties/elevation",
+            "title": "Elevation",
+            "default": "1865",
+            "format": "text",
+            "description": "The elevation' about sea level in meters"
+        },
+        "distance": {
+            "type": "string",
+            "id": "/properties/distance",
+            "title": "Distance",
+            "default": "9.771",
+            "format": "text",
+            "description": "Distance to current location will be updated geolocation changes (GPS)"
+        },
+        "has_detail_page": {
+            "type": "string",
+            "id": "/properties/has_detail_page",
+            "title": "Details Page exists:",
+  		    "enum": [
+        		"0",
+          		"1"
+          	],
+          	 "options": {
+       		   "enum_titles": [
+            		"No",
+            		"Yes"
+            	]
+       		},
+            "default": "1",
+            "format": "text",
+            "description": "If set to yes (1) the URL mentioned below can be clicked in the icon info. Set to no (0), if the URL is not available currently for Mixare users."
+        },
+        "webpage": {
+            "type": "string",
+            "id": "/properties/webpage",
+            "title": "URL:",
+            "default": "http://www.uni-landau.de",
+            "format": "text",
+            "description": "URL to webpage with additional information to geolocation/icon."
         }
-      }
-    },
-    "url": {
-      "title": "URL:",
-      "type": "string",
-    },
-    "date": {
-      "title": "Created Date/Time:",
-      "type": "string",
-    },
-    "comment" : {
-      "title":"Comment/Abstract for Location",
-      "type":"string",
-      "format":"textaera",
-      "default": "comment about the SDG at geolocation"
-    }
-  },
-  "definitions": {
-  }
+ 	},
+  	"definitions": {
+  	}
 }

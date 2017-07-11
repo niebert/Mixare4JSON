@@ -182,7 +182,7 @@ Editor4JSON.prototype.init = function (pDOMID,pData,pSchema) {
 	};
   this.loadLS(); // load aData from local storage if that exists
 	if (this.aData.length == 0) {
-		this.aData.push({"date":new Date().toLocaleString()});
+		this.aData.push({"id":new Date().toLocaleString()});
 	};
   this.aDOMID = pDOMID;
   this.aName = pDOMID["name"] || "myjson";
@@ -1085,7 +1085,7 @@ Editor4JSON.prototype.add = function () {
   //    vMyInstance.add();
   //-------------------------------------------------------
 
-  this.aData.push({"date":new Date().toLocaleString()});
+  this.aData.push({"id":new Date().toLocaleString()});
   this.current = this.aData.length - 1; // this is the index of the last new element
   this.edit();
   this.updateDOM(); // updateDOM()-call necessary because length and current index changed due to add-click of user
