@@ -10,7 +10,6 @@ vDataJSON["mapobject"] = {
         "lng",
         "elevation",
         "title",
-        "distance",
         "has_detail_page",
         "webpage"
     ],
@@ -55,11 +54,19 @@ vDataJSON["mapobject"] = {
             "format": "text",
             "description": "The elevation' about sea level in meters"
         },
+        "comment": {
+            "type": "string",
+            "id": "/properties/distance",
+            "title": "Comment",
+            "default": "Comment about location",
+            "format": "text",
+            "description": "This comment will helps to maintain the Mixare Database for the selected geolocation (GPS). Comment will not be displayed in Mixare"
+        },
         "distance": {
             "type": "string",
             "id": "/properties/distance",
             "title": "Distance",
-            "default": "9.771",
+            "default": "0.0",
             "format": "text",
             "description": "Distance to current location will be updated geolocation changes (GPS)"
         },
@@ -79,7 +86,7 @@ vDataJSON["mapobject"] = {
        		},
             "default": "1",
             "format": "text",
-            "description": "If set to yes (1) the URL mentioned below can be clicked in the icon info. Set to no (0), if the URL is not available currently for Mixare users."
+            "description": "If set to yes the URL mentioned below will be clickable in mixare. Set to no (0) the URL is not available after clicking on the Mixare icon."
         },
         "webpage": {
             "type": "string",

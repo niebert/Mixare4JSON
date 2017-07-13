@@ -105,6 +105,9 @@ function Editor4JSON () {
 	//----PUBLIC Method: Editor4JSON.exportData()-----
 	// exportData()
 	//	exportData() exports the JSON data in this.aData as file. The filename is defined by this.aName. if aName="myjson" the filename is "myjson.json"
+	//----PUBLIC Method: Editor4JSON.exportMixare()-----
+	// exportMixare()
+	//	exportMixare() exports the Mixare JSON including a result as this.aData as file. The filename is defined by this.aName. if aName="myjson" the filename is "myjson.json"
 	//----PUBLIC Method: Editor4JSON.exportSchema()-----
 	// exportSchema()
 	//	exportSchema() exports the JSON schema in this.aSchemaJSON as file. The filename is defined by this.aName. if aName="myjson" the filename is "myjson_schema.json"
@@ -182,7 +185,8 @@ Editor4JSON.prototype.init = function (pDOMID,pData,pSchema) {
 	};
   this.loadLS(); // load aData from local storage if that exists
 	if (this.aData.length == 0) {
-		this.aData.push({"id":new Date().toLocaleString()});
+		//this.aData.push({"id":new Date().toLocaleString()});
+		this.aData.push({"id":Date.now()});	
 	};
   this.aDOMID = pDOMID;
   this.aName = pDOMID["name"] || "myjson";
@@ -541,6 +545,37 @@ Editor4JSON.prototype.exportData = function () {
 };
 //----End of Method exportData Definition
 
+//#################################################################
+//# PUBLIC Method: exportData()
+//#    used in Class: Editor4JSON
+//# Parameter:
+//#
+//# Comment:
+//#    exportData() exports the JSON data in this.aData as file. The filename is defined by this.aName. if aName="myjson" the filename is "myjson.json"
+//#
+//# created with JSCC  2017/03/05 18:13:28
+//# last modifications 2017/06/02 20:56:06
+//#################################################################
+
+Editor4JSON.prototype.exportMixare = function () {
+  //----Debugging------------------------------------------
+  // console.log("js/editor4json.js - Call: exportData()");
+  // alert("js/editor4json.js - Call: exportData()");
+  //----Create Object/Instance of Editor4JSON----
+  //    var vMyInstance = new Editor4JSON();
+  //    vMyInstance.exportData();
+  //-------------------------------------------------------
+  var vMixareDB = {
+  	 "status": "OK", 
+  	 "num_results": this.aData.length,
+  	 "result" : this.aData
+  };
+  alert("Export Mixare Database.\nUse Database in Mixare.\nEdit 'Own URL' in Data Sources!")
+  // see JSON format on  https://code.google.com/archive/p/mixare/wikis/DisplayYourOwnData.wiki
+  this.export(this.aName+"_mixare.json",vMixareDB)
+
+};
+//----End of Method exportData Definition
 
 //#################################################################
 //# PUBLIC Method: exportSchema()
@@ -1085,7 +1120,8 @@ Editor4JSON.prototype.add = function () {
   //    vMyInstance.add();
   //-------------------------------------------------------
 
-  this.aData.push({"id":new Date().toLocaleString()});
+  //this.aData.push({"id":new Date().toLocaleString()});
+  this.aData.push({"id":Date.now()});
   this.current = this.aData.length - 1; // this is the index of the last new element
   this.edit();
   this.updateDOM(); // updateDOM()-call necessary because length and current index changed due to add-click of user
