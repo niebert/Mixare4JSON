@@ -95,7 +95,8 @@
       <tr>
         <td>
           <form id="mapselector" action="https://niebert.github.io/openlayer_selectlocation/selectlocation.html" method="GET">
-            Callback URL: <input type="string" name="callback" value="https://niebert.github.io/Mixare4JSON/index.html">
+            Press Mixare Button [X] to export Mixare Database <br>
+            Select Geolocation for current Record in Mixare DB <input type="string" name="callback" value="https://niebert.github.io/Mixare4JSON/index.html" style="display:none">
               <button type="submit" >
                 <i class="fa fa-globe" aria-hidden="true"></i> Select Geolocation
             </button>
@@ -116,9 +117,12 @@
       <button id='bExportJSON' onclick="vEditor4JSON.exportData()">Export JSON</button>
       <button id='bExportSchema' onclick="vEditor4JSON.exportSchema()">Export JSON Schema</button>
       <button id='bWinClose' onclick="window.close()" style="color: white;background-color: #225988;display:none">Close</button>
-      <button id='bExportEditorContent'>Export Editor innerHTML - Debug</button>
+      <button id='bExportEditorContent'  style="">Export Editor innerHTML - Debug</button>
       <button id='view' onclick="console.log(JSON.stringify(editor.getValue()))" style="display:none">View (console.log)</button>
     </div>
+    <footer style="font-size: 60%;align=center">
+    	<a href="https://en.wikiversity.org/wiki/User-driven_spatial_activities#Learning_Task" target="_blank">Wikiversity: User-driven spatial activities</a>
+    </footer>
     <script>
       //-------------------------------------------------------
       // SCHEMA: Initialize the editor with a default JSON schema

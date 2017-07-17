@@ -50,7 +50,7 @@ vDataJSON["mapobject"] = {
             "type": "string",
             "id": "/properties/elevation",
             "title": "Elevation",
-            "default": "1865",
+            "default": "",
             "format": "text",
             "description": "The elevation' about sea level in meters"
         },
