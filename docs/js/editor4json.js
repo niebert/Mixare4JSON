@@ -1066,11 +1066,11 @@ Editor4JSON.prototype.load = function (pFileID4DOM) {
 		fileReader.onload = function(fileLoadedEvent){
 				var vTextFromFileLoaded = fileLoadedEvent.target.result;
 				//document.getElementById("inputTextToSave").value = textFromFileLoaded;
-				//alert("textFromFileLoaded="+textFromFileLoaded);
+				//alert("vTextFromFileLoaded="+vTextFromFileLoaded);
 				vThis.aLoadedFile = fileToLoad.name;
 				vThis.importJSON(vTextFromFileLoaded);
 				vThis.edit();
-  				vThis.updateDOM();
+  			vThis.updateDOM();
 				vThis.saveLS();
 			};
 		//onload handler set now start loading the file
@@ -1166,8 +1166,16 @@ Editor4JSON.prototype.importJSON = function (pStringJSON) {
    console.log("importJSON('"+this.aLoadedFile+"')");
   if (pStringJSON) {
       try {
-          this.aData = JSON.parse(pStringJSON);
-          alert("File JSON '"+this.aLoadedFile+"' loaded successfully!")
+				var vData = JSON.parse(pStringJSON);
+				if (vData.hasOwnProperty("geonames")) {
+					this.aData = vData["geonames"];
+					alert("File JSON '"+this.aLoadedFile+"' loaded successfully as Mixare JSON!")
+				} else if (isArray(vData)) {
+					this.aData = vData;
+					alert("File JSON '"+this.aLoadedFile+"' loaded successfully!")
+				} else {
+					alert("ERROR: JSON is not an array of Mixare Points!")
+				};
       } catch(e) {
           alert(e); // error in the above string (in this case, yes)!
       }
