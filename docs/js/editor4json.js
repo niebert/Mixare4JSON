@@ -948,6 +948,11 @@ Editor4JSON.prototype.updateDOM = function () {
 
   //--- update current array index ------------
   var vID = this.aDOMID["current"] || "array_index";
+	if (!isArray(this.aData)) {
+		console.log("this.aData does not exist! Will create array!");
+		this.aData = [];
+		this.aData.push({"id":Date.now()});
+	};
 	if (this.aData.length > 0) {
 		if (this.current == -1) {
 			this.current = 0;
