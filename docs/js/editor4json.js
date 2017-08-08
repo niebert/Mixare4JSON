@@ -1069,6 +1069,7 @@ Editor4JSON.prototype.load = function (pFileID4DOM) {
 				//alert("vTextFromFileLoaded="+vTextFromFileLoaded);
 				vThis.aLoadedFile = fileToLoad.name;
 				vThis.importJSON(vTextFromFileLoaded);
+				vThis.check();
 				vThis.edit();
   			vThis.updateDOM();
 				vThis.saveLS();
