@@ -186,7 +186,7 @@ Editor4JSON.prototype.init = function (pDOMID,pData,pSchema) {
   this.loadLS(); // load aData from local storage if that exists
 	if (this.aData.length == 0) {
 		//this.aData.push({"id":new Date().toLocaleString()});
-		this.aData.push({"id":Date.now()});	
+		this.aData.push({"id":Date.now()});
 	};
   this.aDOMID = pDOMID;
   this.aName = pDOMID["name"] || "myjson";
@@ -565,10 +565,17 @@ Editor4JSON.prototype.exportMixare = function () {
   //    var vMyInstance = new Editor4JSON();
   //    vMyInstance.exportData();
   //-------------------------------------------------------
-  var vMixareDB = {
-  	 "status": "OK", 
+	//var vMixareDB = {
+  //	 "status": "OK",
+  //	 "num_results": this.aData.length,
+  //	 "result" : this.aData
+  //};
+	// The previous definition is documented but does not work in current version of Mixare
+	// The following format is updated and based on a test with Prof. Dr. Bjoern Risch
+	var vMixareDB = {
+  	 "status": "OK",
   	 "num_results": this.aData.length,
-  	 "result" : this.aData
+  	 "geonames" : this.aData
   };
   alert("Export Mixare Database.\nUse Database in Mixare.\nEdit 'Own URL' in Data Sources!")
   // see JSON format on  https://code.google.com/archive/p/mixare/wikis/DisplayYourOwnData.wiki

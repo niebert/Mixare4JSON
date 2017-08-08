@@ -8,8 +8,8 @@ vDataJSON["mapobject"] = {
         "id",
         "lat",
         "lng",
-        "elevation",
         "title",
+				"summary",
         "has_detail_page",
         "webpage"
     ],
@@ -22,13 +22,21 @@ vDataJSON["mapobject"] = {
             "format": "text",
             "description": "Unique ID for all icons"
         },
-        "title": {
+				"title": {
             "type": "string",
             "id": "/properties/title",
             "title": "Title",
             "default": "Title of Mixare Icon",
             "format": "text",
             "description": "Title displayed with Mixare Augemented Reality Icon."
+        },
+				"summary": {
+            "type": "string",
+            "id": "/properties/summary",
+            "title": "Summary",
+            "default": "Short comment about the geolocation",
+            "format": "text",
+            "description": "Summary describes the ."
         },
         "lat": {
             "type": "string",
