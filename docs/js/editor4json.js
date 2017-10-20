@@ -66,7 +66,10 @@ function Editor4JSON () {
 	this.aEditURL = "";
 	//---PUBLIC: aDOMID (Hash): the attribute 'aDOMID' stores in ids of DOM element, e.g. editor_holder, valid ...
 	this.aDOMID = null;
-
+	//---PUBLIC: aConfig (Hash): the attribute 'aConfig' stores the configuration variables of the editor
+	this.aConfig = {
+			"dataid": "Mixare4JSON"
+		}
   //---------------------------------------------------------------------
   //---Methods of Class "Editor4JSON()"
   //---------------------------------------------------------------------
@@ -228,6 +231,46 @@ Editor4JSON.prototype.init = function (pDOMID,pData,pSchema) {
 	this.updateDOM();
 };
 //----End of Method init Definition
+
+//#################################################################
+//# PUBLIC Method: initAsk()
+//#    used in Class: Editor4JSON
+//# Parameter:
+//#
+//# Comment:
+//#    initAsk() asks the user if deleteRecord() should be performed
+//#
+//# created with JSCC  2017/03/05 18:13:28
+//# last modifications 2017/06/02 20:56:06
+//#################################################################
+
+Editor4JSON.prototype.initAsk = function () {
+  //----Debugging------------------------------------------
+  // console.log("js/editor4json.js - Call: initAsk()");
+  // alert("js/editor4json.js - Call: initAsk()");
+  //----Create Object/Instance of Editor4JSON----
+  //    var vMyInstance = new Editor4JSON();
+  //    vMyInstance.initAsk();
+  //-------------------------------------------------------
+
+  var vOK = confirm("Do you really want to initialize the JSON-DB '"+this.aConfig["dataid"]+"'?");
+  if (vOK == true) {
+		var vSampleOK = confirm("Do you want to initialize the JSON-DB '"+this.aConfig["dataid"]+"' with sample data?");
+		if (vSampleOK == true) {
+			this.aData = vDataJSON[this.aConfig["dataid"]];
+			alert("JSON-DB initalized with sample data!");
+		} else {
+			this.aData = [];
+			alert("All data deleted in JSON-DB!");
+		};
+		this.first();
+		//save changes to Local Storage
+		this.saveLS();
+	} else {
+    console.log("initialize JSON-DB cancelled")
+  };
+};
+//----End of Method initAsk Definition
 
 
 //#################################################################
@@ -1028,8 +1071,7 @@ Editor4JSON.prototype.getEditorData = function () {
   //-------------------------------------------------------
 	var vEditorData = {
 		"current" : this.current,
-		"data" : this.aData,
-		"schema" : this.aSchemaJSON
+		"data" : this.aData
 	};
 	return vEditorData;
 };
