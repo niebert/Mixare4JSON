@@ -68,7 +68,7 @@ function Editor4JSON () {
 	this.aDOMID = null;
 	//---PUBLIC: aConfig (Hash): the attribute 'aConfig' stores the configuration variables of the editor
 	this.aConfig = {
-			"dataid": "Mixare4JSON"
+			"dataid": vSchemaID
 		}
   //---------------------------------------------------------------------
   //---Methods of Class "Editor4JSON()"

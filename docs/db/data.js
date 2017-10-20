@@ -1,20 +1,21 @@
-[
+vDataJSON["mapobject"] = [
     {
-        "make": "Toyota",
-        "model": "Prius",
-        "year": 2008,
-        "comment": "comment about the Toyota car"
+        "id": "2821",
+        "lat": "49.88103065797765",
+        "lng": "14.645669531250002",
+        "title": "Title of Mixare Icon",
+        "summary": "Short comment about the geolocation",
+        "has_detail_page": "1",
+        "webpage": "http://www.uni-landau.de",
     },
+
     {
-        "make": "BMW",
-        "model": "M1",
-        "year": 2010,
-        "comment": "comment about the BMW car"
-    },
-    {
-        "make": "Ford",
-        "model": "Mondeo",
-        "year": 2012,
-        "comment": "comment about the Ford car"
+        "id": "1508460902844",
+        "lat": "46.49396",
+        "lng": "11.2088",
+        "title": "Title of Mixare Icon",
+        "summary": "Short comment about the geolocation",
+        "has_detail_page": "1",
+        "webpage": "http://www.github.com",
     }
 ]
