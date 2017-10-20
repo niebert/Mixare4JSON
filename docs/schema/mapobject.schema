@@ -18,7 +18,7 @@ vDataJSON["mapobject"] = {
             "type": "string",
             "id": "/properties/id",
             "title": "ID",
-            "default": "2821",
+            "default": "",
             "format": "text",
             "description": "Unique ID for all icons"
         },
@@ -26,7 +26,7 @@ vDataJSON["mapobject"] = {
             "type": "string",
             "id": "/properties/title",
             "title": "Title",
-            "default": "Title of Mixare Icon",
+            "default": "",
             "format": "text",
             "description": "Title displayed with Mixare Augemented Reality Icon."
         },
@@ -34,15 +34,15 @@ vDataJSON["mapobject"] = {
             "type": "string",
             "id": "/properties/summary",
             "title": "Summary",
-            "default": "Short comment about the geolocation",
+            "default": "",
             "format": "text",
-            "description": "Summary describes the ."
+            "description": "Summary describes the location"
         },
         "lat": {
             "type": "string",
             "id": "/properties/lat",
             "title": "Latitude",
-            "default": "46.49396",
+            "default": "",
             "format": "text",
             "description": "An explanation for 'root.lat' about the purpose of string instance with editor path 'root.lat'."
         },
@@ -50,7 +50,7 @@ vDataJSON["mapobject"] = {
             "type": "string",
             "id": "/properties/lng",
             "title": "Longitude",
-            "default": "11.2088",
+            "default": "",
             "format": "text",
             "description": "An explanation for 'root.lng' about the purpose of string instance with editor path 'root.lng'."
         },
@@ -66,7 +66,7 @@ vDataJSON["mapobject"] = {
             "type": "string",
             "id": "/properties/distance",
             "title": "Comment",
-            "default": "Comment about location",
+            "default": "",
             "format": "text",
             "description": "This comment will helps to maintain the Mixare Database for the selected geolocation (GPS). Comment will not be displayed in Mixare"
         },
@@ -74,7 +74,7 @@ vDataJSON["mapobject"] = {
             "type": "string",
             "id": "/properties/distance",
             "title": "Distance",
-            "default": "0.0",
+            "default": "",
             "format": "text",
             "description": "Distance to current location will be updated geolocation changes (GPS)"
         },
@@ -100,7 +100,7 @@ vDataJSON["mapobject"] = {
             "type": "string",
             "id": "/properties/webpage",
             "title": "URL:",
-            "default": "http://www.uni-landau.de",
+            "default": "",
             "format": "text",
             "description": "URL to webpage with additional information to geolocation/icon."
         }
