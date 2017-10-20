@@ -258,7 +258,7 @@ Editor4JSON.prototype.initAsk = function () {
 		var vSampleOK = confirm("Do you want to initialize the JSON-DB '"+this.aConfig["dataid"]+"' with sample data?");
 		if (vSampleOK == true) {
 			//this.aData = vDataJSON[this.aConfig["dataid"]];
-			this.aData = vDataJSON["mapobject"];
+			this.aData = vDataJSON["initdata"]; // defined in /db/data.js
 			console.log("JSON-DB: " +JSON.stringify(this.aData,null,2));
 			alert("JSON-DB initalized with sample data!");
 		} else {

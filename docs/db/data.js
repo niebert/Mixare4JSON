@@ -1,4 +1,4 @@
-vDataJSON["mapobject"] = [
+vDataJSON["initdata"] = [
     {
         "id": "2821",
         "lat": "49.88103065797765",
