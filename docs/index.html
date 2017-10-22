@@ -107,6 +107,41 @@
         </td>
     </tr>
     <tr>
+      <td colspan="4">
+        <form id="mapselector" action="https://niebert.github.io/openlayer_selectlocation/selectlocation.html" method="GET">
+          <!-- Set the Callback URL for the OpenLayers location selector here: -->
+          <!-- <input type="string" name="callback" value="../Mapper4SDG/index.html" style="display:none"> -->
+          <input type="string" name="callback" value="../Mapper4SDG/index.html" style="display:none">
+          <b>Map Center:</b>
+          <input type="string" name="mapcenter" id="mymapcenter" size="30" value="-1.81185, 52.443141">
+          &nbsp;
+          <b>Zoom:</b>
+          <!-- <input type="string" name="zoom" id="myzoom" size="3" value="5"> -->
+          <select name="zoom" id="myzoom">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option selected>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+          </select>
+          &nbsp;
+          <button type="submit"  style="color: #000000;background-color: #DFDFDF">
+              <i class="fa fa-globe" aria-hidden="true"></i> Select Geolocation
+          </button>
+        </form>
+      </td>
+  </tr>
+  <tr>
         <td>
           <div class="text" id="load_filename"></div>
         </td>
@@ -117,10 +152,10 @@
 
     <div id='editor_holder' style="margin-right: 30px; margin-left: 30px"></div>
     <div id='button_holder' style="margin:20px">
-      <button id='bExportJSON' onclick="vEditor4JSON.exportData()">Export JSON</button>
-      <button id='bExportSchema' onclick="vEditor4JSON.exportSchema()">Export JSON Schema</button>
+      <button id='bExportJSON' onclick="vEditor4JSON.exportData();return false">Export JSON</button>
+      <button id='bExportSchema' onclick="vEditor4JSON.exportSchema();return false">Export JSON Schema</button>
       <button id='bWinClose' onclick="window.close()" style="color: white;background-color: #225988;display:none">Close</button>
-      <button id='bExportEditorContent'  style="">Export Editor innerHTML - Debug</button>
+      <button id='bExportEditorContent'  style="display:none">Export Editor innerHTML - Debug</button>
       <button id='view' onclick="console.log(JSON.stringify(editor.getValue()))" style="display:none">View (console.log)</button>
     </div>
     <div align="center" style="font-size: 80%">
@@ -171,6 +206,7 @@
       //-------------------------------------------------------
       var vEditor4JSON = new Editor4JSON();
       var vInitData = vDataJSON["data"];
+      console.log("JSON Editor call init()");
       vEditor4JSON.init(vDOMID,vInitData,vSchemaJSON);
       var editor = vEditor4JSON.aEditor;
       //-------------------------------------------------------

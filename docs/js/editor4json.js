@@ -181,7 +181,8 @@ Editor4JSON.prototype.init = function (pDOMID,pData,pSchema) {
   //    var vMyInstance = new Editor4JSON();
   //    vMyInstance.init(pID4DOM,pData,pSchema);
   //-------------------------------------------------------
-
+	console.log("Editor4JSON.init()-Call");
+	console.log("Schmema JSON\n"+JSON.stringify(pSchema,null,4));
   this.aSchema = pSchema;
 	if (pData) {
 		this.aData = pData;
@@ -552,7 +553,7 @@ Editor4JSON.prototype.export = function (pFilename,pJSON) {
   //    var vMyInstance = new Editor4JSON();
   //    vMyInstance.export(pFilename,pJSON);
   //-------------------------------------------------------
-
+	console.log("Editor4JSON.export('"+pFilename+"')-Call");
   var vStringJSON = JSON.stringify(pJSON,null,4);
   // File is a Javascript Class defined in FileSaver.js
   var file = new File([vStringJSON], {type: "text/plain;charset=utf-8"});
@@ -644,14 +645,13 @@ Editor4JSON.prototype.exportMixare = function () {
 Editor4JSON.prototype.exportSchema = function () {
   //----Debugging------------------------------------------
   // console.log("js/editor4json.js - Call: exportSchema()");
-  // alert("js/editor4json.js - Call: exportSchema()");
+	console.log("Export Schmema JSON\n"+JSON.stringify(vSchemaJSON,null,4));
+  alert("js/editor4json.js - Call: exportSchema()");
   //----Create Object/Instance of Editor4JSON----
   //    var vMyInstance = new Editor4JSON();
   //    vMyInstance.exportSchema();
   //-------------------------------------------------------
-
-  this.export(this.aName+"_schema.json",this.aSchemaJSON)
-
+	this.export(this.aName+"_schema.json",vSchemaJSON)
 };
 //----End of Method exportSchema Definition
 
