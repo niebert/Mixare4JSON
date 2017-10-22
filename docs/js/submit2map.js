@@ -14,7 +14,7 @@ function copyMapCenterZoom() {
 
 function populateDataJSON() {
   vEditor4JSON.saveLS(); // save JSON Data to Local Storage
-  copyMapCenterZoom();
+  //copyMapCenterZoom();
   var vData = vEditor4JSON.aData;
   var vOut = "";
   var vCR = "";

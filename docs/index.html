@@ -98,15 +98,39 @@
     <table>
       <tr>
         <td>
-          <form id="mapselector" action="https://niebert.github.io/openlayer_selectlocation/selectlocation.html" method="GET">
-            Press Mixare Button [X] to export Mixare Database <br>
-            Select Geolocation for current Record in Mixare DB <input type="string" name="callback" value="https://niebert.github.io/Mixare4JSON/index.html" style="display:none">
-              <button type="submit" >
-                <i class="fa fa-globe" aria-hidden="true"></i> Select Geolocation
-            </button>
-          </form>
-        </td>
-        <td>
+            <form id="mapselector" action="https://niebert.github.io/openlayer_selectlocation/selectlocation.html" method="GET">
+              <!-- Set the Callback URL for the OpenLayers location selector here: -->
+              <!-- <input type="string" name="callback" value="../Mapper4SDG/index.html" style="display:none"> -->
+              <input type="string" name="callback" value="https://niebert.github.io/Mixare4JSON/index.html" style="display:none">
+              <b>Map Center:</b>
+              <input type="string" name="mapcenter" id="mymapcenter" size="30" value="-1.81185, 52.443141">
+              &nbsp;
+              <b>Zoom:</b>
+              <!-- <input type="string" name="zoom" id="myzoom" size="3" value="5"> -->
+              <select name="zoom" id="myzoom">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option selected>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+              </select>
+              &nbsp;
+              <button type="submit"  style="color: #000000;background-color: #DFDFDF">
+                  <i class="fa fa-globe" aria-hidden="true"></i> Select Geolocation
+              </button>
+            </form>
+          </td>
+      <td>
           <form id="mapselector" onsubmit="populateDataJSON()" action="https://niebert.github.io/openlayer_display_markers/viewicons.html" method="GET">
             <!-- Set the Callback URL for the OpenLayers location selector here: -->
             &nbsp;
