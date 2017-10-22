@@ -8,13 +8,13 @@ function el4id(pID) {
 }
 
 function copyMapCenterZoom() {
-  el4id("viewmapcenter").value = el4id("mymapcenter").value
-  el4id("viewzoom").value = el4id("myzoom").value
+  el4id("viewmapcenter").value = el4id("mymapcenter").value;
+  el4id("viewzoom").value = el4id("myzoom").value;
 }
 
 function populateDataJSON() {
   vEditor4JSON.saveLS(); // save JSON Data to Local Storage
-  //copyMapCenterZoom();
+  copyMapCenterZoom();
   var vData = vEditor4JSON.aData;
   var vOut = "";
   var vCR = "";
@@ -26,7 +26,7 @@ function populateDataJSON() {
       vOut += vCR + vRecOut;
       vCR = ",\n";
       if (vMapCenterMissing) {
-        el4id("mymapcenter").value = vData[i].geolocation;
+        el4id("mymapcenter").value = vData[i].lat+","+vData[i].lng;
         vMapCenterMissing = false;
       }
     };
@@ -44,18 +44,19 @@ function getMarkerString(pNr,pRec) {
     vOut += "\"name\" : \"";
     vOut +="<b>";
     if (pRec.webpage != "") {
-      vOut += "<a href=\""+pRec.webpage+"\" target=\"_blank\">"+pRec.title+"</a>";
+      vOut += "<a href=\\\""+pRec.webpage+"\\\" target=\\\"_blank\\\">"+pRec.title+"</a>";
     } else {
       vOut += pRec.title;
     };
-    vOut +="</b><br/>";
+    vOut +="</b>";
     if (pRec.hasOwnProperty("summary")) {
       if (pRec.summary != "") {
-        vOut += pRec.summary.replace(/"/g,'\"');
         vOut +="<br/>";
-      }
-    }
-  } else {
+        vOut += pRec.summary.replace(/"/g,'\"');
+      };
+    };
+    vOut +="\" }";
+} else {
     //console.log("("+pNr+") missing geolocation in record");
     alert("("+pNr+") missing geolocation in record");
   };
