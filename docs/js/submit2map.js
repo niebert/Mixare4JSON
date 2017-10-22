@@ -26,7 +26,7 @@ function populateDataJSON() {
       vOut += vCR + vRecOut;
       vCR = ",\n";
       if (vMapCenterMissing) {
-        el4id("mymapcenter").value = vData[i].lat+","+vData[i].lng;
+        //el4id("mymapcenter").value = vData[i].lat+","+vData[i].lng;
         vMapCenterMissing = false;
       }
     };
@@ -40,7 +40,7 @@ function populateDataJSON() {
 function getMarkerString(pNr,pRec) {
   var vOut = "";
   if ((pRec.lat != "") && (pRec.lng != "")) {
-    vOut += "{ \"geolocation\" : ["+pRec.lat+","+pRec.lng+"],";
+    vOut += "{ \"geolocation\" : ["+pRec.lng+","+pRec.lat+"],";
     vOut += "\"name\" : \"";
     vOut +="<b>";
     if (pRec.webpage != "") {
@@ -51,7 +51,7 @@ function getMarkerString(pNr,pRec) {
     vOut +="</b>";
     if (pRec.hasOwnProperty("summary")) {
       if (pRec.summary != "") {
-        vOut +="<br/>";
+        vOut +="<hr>";
         vOut += pRec.summary.replace(/"/g,'\"');
       };
     };
