@@ -182,7 +182,7 @@ Editor4JSON.prototype.init = function (pDOMID,pData,pSchema) {
   //    vMyInstance.init(pID4DOM,pData,pSchema);
   //-------------------------------------------------------
 	console.log("Editor4JSON.init()-Call");
-	console.log("Schmema JSON\n"+JSON.stringify(pSchema,null,4));
+	//console.log("Schmema JSON\n"+JSON.stringify(pSchema,null,4));
   this.aSchema = pSchema;
 	if (pData) {
 		this.aData = pData;
@@ -212,7 +212,11 @@ Editor4JSON.prototype.init = function (pDOMID,pData,pSchema) {
         };
   // Seed the form with a starting value for the Editor if pData contains at least one record
    if (this.aData.length > 0) {
-      this.aEditorConfig.startval = this.aData[0];
+		 if (this.current < this.aData.length) {
+			 this.aEditorConfig.startval = this.aData[this.current];
+		 } else {
+			 this.aEditorConfig.startval = this.aData[0];			 
+		 }
   };
   // create the editor
   var vEditorDOM = document.getElementById(this.aDOMID["editor"]);
