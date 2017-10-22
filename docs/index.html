@@ -233,6 +233,11 @@
         vRecJSON["lng"] = vGeoArr[0];
         vEditor4JSON.aData[vEditor4JSON.current] = vRecJSON;
         vEditor4JSON.aEditor.setValue(vRecJSON);
+        // update the selected current record in JSON with the selected geolocation
+        document.getElementById("mymapcenter").value = vLinkParam.getValue("geolocation");
+      };
+      if (vLinkParam.exists("zoom")) {
+        document.getElementById("myzoom").value = vLinkParam.getValue("zoom");
       };
     </script>
     <script src="js/datetime4json.js"></script>
