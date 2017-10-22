@@ -984,7 +984,7 @@ Editor4JSON.prototype.check = function () {
 
 Editor4JSON.prototype.updateDOM = function () {
 	//----Debugging------------------------------------------
-  console.log("js/editor4json.js - Call: updateDOM() current="+this.current);
+  //console.log("js/editor4json.js - Call: updateDOM() current="+this.current);
   // alert("js/editor4json.js - Call: updateDOM()");
   //----Create Object/Instance of Editor4JSON----
   //    var vMyInstance = new Editor4JSON();

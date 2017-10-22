@@ -224,6 +224,7 @@
       });
       // Read geolocation from LinkParam instance
       if (vLinkParam.exists("geolocation")) {
+        console.log("Set GeoLocation for current="+vEditor4JSON.current);
         var vRecJSON = vEditor4JSON.aEditor.getValue();
         //vRecJSON["geolocation"] = vLinkParam.getValue("geolocation");
         var vGeoLoc = vLinkParam.getValue("geolocation");
