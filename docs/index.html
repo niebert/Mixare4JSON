@@ -106,6 +106,19 @@
             </button>
           </form>
         </td>
+        <td>
+          <form id="mapselector" onsubmit="populateDataJSON()" action="https://niebert.github.io/openlayer_display_markers/viewicons.html" method="GET">
+            <!-- Set the Callback URL for the OpenLayers location selector here: -->
+            &nbsp;
+            &nbsp;
+            <input type="text" id="viewmapcenter" name="mapcenter" value="undefined" style="display:none">
+            <input type="text" id="viewzoom" name="zoom" value="undefined" style="display:none">
+            <button type="submit"  style="color: white;background-color: #225988">
+                <i class="fa fa-globe" aria-hidden="true"></i> Display Map
+            </button>
+            <textarea rows="5" cols="80" id="jsondata" name="jsondata" style="display:none"></textarea>
+          </form>
+        </td>
     </tr>
     <tr>
         <td>

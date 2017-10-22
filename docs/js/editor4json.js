@@ -645,8 +645,8 @@ Editor4JSON.prototype.exportMixare = function () {
 Editor4JSON.prototype.exportSchema = function () {
   //----Debugging------------------------------------------
   // console.log("js/editor4json.js - Call: exportSchema()");
-	console.log("Export Schmema JSON\n"+JSON.stringify(vSchemaJSON,null,4));
-  alert("js/editor4json.js - Call: exportSchema()");
+	//console.log("Export Schmema JSON\n"+JSON.stringify(vSchemaJSON,null,4));
+  console.log("js/editor4json.js - Call: exportSchema()");
   //----Create Object/Instance of Editor4JSON----
   //    var vMyInstance = new Editor4JSON();
   //    vMyInstance.exportSchema();
