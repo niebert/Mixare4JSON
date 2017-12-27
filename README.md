@@ -15,7 +15,6 @@ https://github.com/niebert/Mapper4SDG/tree/master/docs
 ![UML Diagram of JS Class Editor4JSON](https://niebert.github.io/Mixare4JSON/Editor4JSON_UML.png)
 
 ## JSON to Schema Generator
-
 Used the following tool that creates a [JSON schema](http://json-schema.org/) for a provided JSON file. Used the given JSON file to create the JSON Schema with [JSON2schema.html](https://niebert.github.io/json-editor/plugins/json2schema.html).
 
 ## Acknowledgement
